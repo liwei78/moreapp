@@ -10,9 +10,18 @@
     = csrf_meta_tag
     = yield :header
   %body
-    .wrap
-      .nav
-        
-      = yield
-      .footer
-        &copy; 2010
+    .header
+      .logo
+        = image_tag("logo.png")
+      %ul.nav
+        %li= link_to " ", apps_path, :class => "iphone"
+        %li= link_to " ", ipad_apps_path, :class => "ipad"
+    .main
+      .main-header
+      .main-boddy
+        = yield
+      .main-footer
+
+    .footer
+      &copy; 2011
+

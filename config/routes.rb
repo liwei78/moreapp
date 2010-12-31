@@ -1,5 +1,10 @@
 Moreappweb::Application.routes.draw do
-  resources :apps
+  resources :apps do
+    collection do
+      get 'ipad'
+    end
+  end
+  
   root :to => "apps#index"
   
   # The priority is based upon order of creation:
