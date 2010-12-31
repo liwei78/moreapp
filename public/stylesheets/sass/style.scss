@@ -63,24 +63,35 @@ h1,h2,h3 {
     width: 777px;
     margin: 0 auto;
 }
-.logo {}
+.logo {height: 539px;}
 ul.nav {
   margin: 0;
   padding: 0;
   padding-left: 400px;
+  display: block;
   li {
     list-style: none outside none;
     float: left;
     a {
       display: block;
-      width: 118px;
-      height: 98px;
+      width: 119px;
+      height: 97px;
       background: url("/images/tabs_btn.png") no-repeat;
     }
     a.iphone {}
-    a.iphone:hover {background-position: left bottom;}
+/*    a.iphone:hover {background-position: left bottom;}*/
+    a.on-iphone {
+      background-position: left bottom;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000;
+    }
     a.ipad {background-position: right bottom;}
-    a.ipad:hover {background-position: right top;}
+/*    a.ipad:hover {background-position: right top;}*/
+    a.on-ipad {
+      background-position: right top;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000;
+    }
   }
 }
 
@@ -98,7 +109,7 @@ ul.nav {
   }
   .main-footer {
     background: url("/images/main_bg.png") no-repeat right bottom;
-    height: 60px;
+    height: 120px;
   }
 }
 

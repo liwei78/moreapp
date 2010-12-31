@@ -73,24 +73,34 @@ h1, h2, h3 {
   width: 777px;
   margin: 0 auto; }
 
+.logo {
+  height: 539px; }
+
 ul.nav {
   margin: 0;
   padding: 0;
-  padding-left: 400px; }
+  padding-left: 400px;
+  display: block; }
   ul.nav li {
     list-style: none outside none;
-    float: left; }
+    float: left;
+    /*    a.iphone:hover {background-position: left bottom;}*/
+    /*    a.ipad:hover {background-position: right top;}*/ }
     ul.nav li a {
       display: block;
-      width: 118px;
-      height: 98px;
+      width: 119px;
+      height: 97px;
       background: url("/images/tabs_btn.png") no-repeat; }
-    ul.nav li a.iphone:hover {
-      background-position: left bottom; }
+    ul.nav li a.on-iphone {
+      background-position: left bottom;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000; }
     ul.nav li a.ipad {
       background-position: right bottom; }
-    ul.nav li a.ipad:hover {
-      background-position: right top; }
+    ul.nav li a.on-ipad {
+      background-position: right top;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000; }
 
 .main {
   clear: both;
@@ -104,7 +114,7 @@ ul.nav {
     height: 1000px; }
   .main .main-footer {
     background: url("/images/main_bg.png") no-repeat right bottom;
-    height: 60px; }
+    height: 120px; }
 
 .footer {
   clear: both;

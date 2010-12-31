@@ -14,8 +14,8 @@
       .logo
         = image_tag("logo.png")
       %ul.nav
-        %li= link_to " ", apps_path, :class => "iphone"
-        %li= link_to " ", ipad_apps_path, :class => "ipad"
+        %li= link_to " ", apps_path, :class => "iphone #{@on_iphone}"
+        %li= link_to " ", ipad_apps_path, :class => "ipad #{@on_ipad}"
     .main
       .main-header
       .main-boddy

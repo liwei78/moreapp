@@ -3,6 +3,17 @@ class AppsController < ApplicationController
   # GET /apps.xml
   def index
     @apps = App.all
+    @on_iphone = "on-iphone"
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @apps }
+    end
+  end
+
+  def ipad
+    @apps = App.all
+    @on_ipad = "on-ipad"
 
     respond_to do |format|
       format.html # index.html.erb
