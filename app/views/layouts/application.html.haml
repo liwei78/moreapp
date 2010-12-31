@@ -1,0 +1,18 @@
+!!!
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
+  %head
+    %title= seo_title
+    %meta{'http-equiv' => "content-type", :content => "text/html; charset=UTF-8"}
+    %meta{'name' => "keywords", :content => "#{SITE_SETTINGS["keywords"]}"}
+    %meta{'name' => "description", :content => "#{SITE_SETTINGS["description"]}"}
+    %meta{'name' => "author", :content => "#{SITE_SETTINGS["author"]}"}
+    = stylesheet_link_tag "style"
+    = csrf_meta_tag
+    = yield :header
+  %body
+    .wrap
+      .nav
+        
+      = yield
+      .footer
+        &copy; 2010

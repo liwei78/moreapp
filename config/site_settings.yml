@@ -1,0 +1,14 @@
+common: &common
+  keywords: "key"
+  description: "desc"
+  author: "Rique Li, hi@liwei.me"
+  site_title: "More App"
+  
+development:
+  <<: *common
+
+test:
+  <<: *common  
+
+production:
+  <<: *common
