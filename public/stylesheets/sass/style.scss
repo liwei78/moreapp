@@ -125,8 +125,22 @@ ul.nav {
 /*    height: 1000px;*/
   }
   .main-footer {
-    background: url("/images/main_bg.png") no-repeat right bottom;
-    height: 120px;
+    background: url("/images/main_bg.png") no-repeat center bottom;
+    height: 80px;
+    .more-app-btn {
+      width: 192px;
+      margin: 0 auto;
+      padding-top: 10px;
+      a {
+        display: block;
+        width: 192px;
+        height: 27px;
+        background: url("/images/more_btn.png") no-repeat 0 0;
+      }
+      a:hover {
+        background: url("/images/more_btn_highlight.png") no-repeat 0 0;
+      }
+    }
   }
 }
 
@@ -184,15 +198,98 @@ ul.nav {
 }
 .content-line {
   height: 46px;
-  background: url("/images/content_line.png") no-repeat center center;
+  background: url("/images/single_line.png") no-repeat center center;
 }
+.icons-div {
+  .icons {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 58px;
+    img {
+      margin-right: 14px;
+    }
+  }
+  .line {
+    height: 10px;
+    margin-top: 17px;
+    background: url("/images/single_line.png") no-repeat center center;
+  }
+}
+.subscribe-div {
+  width: 813px;
+  height: 207px;
+  margin-top: 14px;
+  background: url("/images/subscribe_bg.png") no-repeat 0 0;
+  .subscribe-form {
+    padding: 30px 0 0 105px;
+    .text {
+      width: 308px;
+      color: #656565;
+      line-height: 20px;
+      font-size: 12px;
+      font-family: sans-serif;
+      margin-bottom: 20px;
+    }
+    .input {
+      width: 308px;
+      height: 35px;
+      background: url("/images/input_bg.png") no-repeat 0 0;
+      position: relative; /*absolute*/
+      .input-field {
+        width: 203px;
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        border: none;
+        height: 32px;
+        background: url("/images/input_bg.png") no-repeat center center;
+        color: #656565;
+        font-size: 12px;
+        font-family: sans-serif;
+      }
+      .submit-btn {
+        position: absolute;
+        top: 4px;
+        right: 10px;
+      }
+    }
+    .notice {
+      font-size: 12px;
+      font-family: sans-serif;
+      font-weight: bold;
+      padding-left: 24px;
+      height: 24px;
+      line-height: 24px;
+      margin-top: 10px;
+    }
+    .success {
+      background: url("/images/success.png") no-repeat left 3px;
+      color: #c34445;
+    }
+    .error {
+      background: url("/images/error.png") no-repeat left 3px;
+      color: #c34445;
+    }
+  }
+}
+
 
 .footer {
   clear: both;
-  width: 812px;
+  width: 656px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: right;
+  color: #656565;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-style: italic;
+  line-height: 40px;
+  height: 40px;
+  background: url("/images/some_icon.png") no-repeat right 14px;
+  .copyright {
+    margin-right: 50px;
+  }
 }
 
 a.youtube {
