@@ -77,6 +77,15 @@ ul.nav {
       width: 119px;
       height: 97px;
       background: url("/images/tabs_btn.png") no-repeat;
+      position: relative;
+      span {
+        display: block;
+        width: 118px;
+        height: 97px;
+        position: absolute;
+        bottom: -2px;
+        z-index: 99;
+      }
     }
     a.iphone {}
 /*    a.iphone:hover {background-position: left bottom;}*/
@@ -84,6 +93,9 @@ ul.nav {
       background-position: left bottom;
       border-right: 1px solid #000;
       border-left: 1px solid #000;
+      span {
+        background: url("/images/up_arrow.png") no-repeat center bottom;
+      }
     }
     a.ipad {background-position: right bottom;}
 /*    a.ipad:hover {background-position: right top;}*/
@@ -91,6 +103,9 @@ ul.nav {
       background-position: right top;
       border-right: 1px solid #000;
       border-left: 1px solid #000;
+      span {
+        background: url("/images/up_arrow.png") no-repeat center bottom;
+      }
     }
   }
 }
@@ -99,6 +114,7 @@ ul.nav {
   clear: both;
   width: 812px;
   margin: 0 auto;
+  z-index: 0;
   .main-header {
     background: url("/images/main_bg.png") no-repeat right top;
     height: 60px;

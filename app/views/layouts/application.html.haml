@@ -7,6 +7,7 @@
     %meta{'name' => "description", :content => "#{SITE_SETTINGS["description"]}"}
     %meta{'name' => "author", :content => "#{SITE_SETTINGS["author"]}"}
     = stylesheet_link_tag "style"
+    = javascript_include_tag "jquery", "rails", "application"
     = csrf_meta_tag
     = yield :header
   %body
@@ -14,8 +15,8 @@
       .logo
         = image_tag("logo.png")
       %ul.nav
-        %li= link_to " ", apps_path, :class => "iphone #{@on_iphone}"
-        %li= link_to " ", ipad_apps_path, :class => "ipad #{@on_ipad}"
+        %li= link_to raw("<span> </span>"), apps_path, :class => "iphone #{@on_iphone}"
+        %li= link_to raw("<span> </span>"), ipad_apps_path, :class => "ipad #{@on_ipad}"
     .main
       .main-header
       .main-boddy

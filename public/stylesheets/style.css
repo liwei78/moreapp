@@ -90,22 +90,35 @@ ul.nav {
       display: block;
       width: 119px;
       height: 97px;
-      background: url("/images/tabs_btn.png") no-repeat; }
+      background: url("/images/tabs_btn.png") no-repeat;
+      position: relative; }
+      ul.nav li a span {
+        display: block;
+        width: 118px;
+        height: 97px;
+        position: absolute;
+        bottom: -2px;
+        z-index: 99; }
     ul.nav li a.on-iphone {
       background-position: left bottom;
       border-right: 1px solid #000;
       border-left: 1px solid #000; }
+      ul.nav li a.on-iphone span {
+        background: url("/images/up_arrow.png") no-repeat center bottom; }
     ul.nav li a.ipad {
       background-position: right bottom; }
     ul.nav li a.on-ipad {
       background-position: right top;
       border-right: 1px solid #000;
       border-left: 1px solid #000; }
+      ul.nav li a.on-ipad span {
+        background: url("/images/up_arrow.png") no-repeat center bottom; }
 
 .main {
   clear: both;
   width: 812px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 0; }
   .main .main-header {
     background: url("/images/main_bg.png") no-repeat right top;
     height: 60px; }
