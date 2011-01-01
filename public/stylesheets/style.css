@@ -220,10 +220,10 @@ ul.nav {
       .subscribe-div .subscribe-form .input .input-field {
         width: 203px;
         position: absolute;
-        top: 0px;
+        top: 4px;
         left: 10px;
         border: none;
-        height: 32px;
+        height: 22px;
         background: url("/images/input_bg.png") no-repeat center center;
         color: #656565;
         font-size: 12px;
