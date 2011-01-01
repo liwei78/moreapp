@@ -1,17 +1,19 @@
-.content-box
-  .content-header
-  .content-layout
-    .content-boddy
-      .content-boddy-box
-        .icon
-          =image_tag("sample_icon.png")
-        .desc
-          .app-title
-            .right
-              Lifestyle
-            Talking Ladybug
-          .app-desc
-            It's a app desc, #{"words "*40}.
-        .clearfix
-    .content-footer
-      =image_tag("free_app_btn.png")
+- 3.times do
+  .content-box
+    .content-header
+    .content-layout
+      .content-boddy
+        .content-boddy-box
+          .icon
+            =image_tag("sample_icon.png")
+          .desc
+            .app-title
+              .right
+                Lifestyle
+              Talking Ladybug #{link_to nbsp(4), "#", :title => "go youtube", :class => "youtube"}
+            .app-desc
+              It's a app desc, #{"words "*40}.
+          .clearfix
+      .content-footer
+        =image_tag("free_app_btn.png")
+  .content-line
