@@ -78,6 +78,7 @@ ul.nav {
       height: 97px;
       background: url("/images/tabs_btn.png") no-repeat;
       position: relative;
+      cursor: pointer;
       span {
         display: block;
         width: 118px;
@@ -121,11 +122,61 @@ ul.nav {
   }
   .main-boddy {
     background: url("/images/main_bg_repeat.png") repeat-y;
-    height: 1000px;
+/*    height: 1000px;*/
   }
   .main-footer {
     background: url("/images/main_bg.png") no-repeat right bottom;
     height: 120px;
+  }
+}
+
+.content-box {
+  width: 740px;
+  margin-left: 54px;
+  .content-header {
+    height: 40px;
+    background: url("/images/content_bg.png") no-repeat left top;
+  }
+  .content-layout {
+    background: url("/images/content_bg.png") no-repeat left bottom;
+  }
+  .content-boddy {
+/*    height: 400px;*/
+    background: url("/images/content_bg_repeat.png") repeat-y left center;
+    .content-boddy-box {
+      width: 597px;
+      margin: 0 auto;
+      }
+      .icon {
+        width: 82px;
+        text-align: center;
+        float: left;
+      }
+      .desc {
+        float: left;
+        width: 500px;
+        margin-left: 10px;
+        color: #2a2a2a;
+        .app-title {
+          font-size: 24px;
+          color: #2a2a2a;
+          font-family: sans-serif;
+          font-weight: bold;
+          .right {
+            color: #358f1b;
+            font-style: italic;
+          }
+        }
+        .app-desc {
+          width: 330px;
+          margin-top: 10px;
+        }
+    }
+  }
+  .content-footer {
+    height: 72px;
+    text-align: right;
+    padding-right: 89px;
   }
 }
 
