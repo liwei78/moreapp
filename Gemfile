@@ -30,18 +30,18 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem "haml"
-gem "will_paginate"
-gem 'jquery-rails'
-gem 'ckeditor', '3.4.2.pre'
-gem 'paperclip'
+# gem "will_paginate"
+# gem 'jquery-rails'
+# gem 'ckeditor', '3.4.2.pre'
+# gem 'paperclip'
 
-group :development do
-  gem 'rspec-rails'
-  gem 'faker'
-end
-
-group :test do
-  gem 'rspec'
-  gem 'webrat'
-  gem 'factory_girl_rails'
-end
+# group :development do
+#   gem 'rspec-rails'
+#   gem 'faker'
+# end
+# 
+# group :test do
+#   gem 'rspec'
+#   gem 'webrat'
+#   gem 'factory_girl_rails'
+# end
