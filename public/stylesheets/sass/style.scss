@@ -89,7 +89,7 @@ ul.nav {
       }
     }
     a.iphone {}
-/*    a.iphone:hover {background-position: left bottom;}*/
+
     a.on-iphone {
       background-position: left bottom;
       border-right: 1px solid #000;
@@ -99,7 +99,6 @@ ul.nav {
       }
     }
     a.ipad {background-position: right bottom;}
-/*    a.ipad:hover {background-position: right top;}*/
     a.on-ipad {
       background-position: right top;
       border-right: 1px solid #000;
@@ -122,7 +121,6 @@ ul.nav {
   }
   .main-boddy {
     background: url("/images/main_bg_repeat.png") repeat-y;
-/*    height: 1000px;*/
   }
   .main-footer {
     background: url("/images/main_bg.png") no-repeat center bottom;
@@ -155,7 +153,6 @@ ul.nav {
     background: url("/images/content_bg.png") no-repeat left bottom;
   }
   .content-boddy {
-/*    height: 400px;*/
     background: url("/images/content_bg_repeat.png") repeat-y left center;
     .content-boddy-box {
       width: 597px;
@@ -179,6 +176,12 @@ ul.nav {
           .right {
             color: #358f1b;
             font-style: italic;
+          }
+          a {
+            color: #2a2a2a;
+          }
+          a:hover {
+            text-decoration: underline;
           }
         }
         .app-desc {
@@ -296,4 +299,5 @@ a.youtube {
   width: 26px;
   height: 24px;
   background: url("/images/youtube.png") no-repeat 0 0;
+  text-decoration: none !important;
 }

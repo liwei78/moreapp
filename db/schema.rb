@@ -15,7 +15,9 @@ ActiveRecord::Schema.define(:version => 20101229070801) do
   create_table "apps", :force => true do |t|
     t.string   "title"
     t.text     "desc"
-    t.string   "icon"
+    t.string   "app_type"
+    t.string   "icon_url"
+    t.string   "youtube_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

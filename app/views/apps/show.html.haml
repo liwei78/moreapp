@@ -1,0 +1,19 @@
+.content-box
+  .content-header
+  .content-layout
+    .content-boddy
+      .content-boddy-box
+        .icon
+          =image_tag(@app.icon_url)
+        .desc
+          .app-title
+            .right
+              Lifestyle
+            =@app.title
+            =link_to nbsp(4), @app.youtube_url, :title => "go youtube", :class => "youtube", :target => "_blank" if @app.has_youtube?
+          .app-desc
+            =simple_format(@app.desc)
+        .clearfix
+    .content-footer
+      =image_tag("free_app_btn.png")
+.content-line

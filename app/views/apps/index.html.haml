@@ -1,18 +1,19 @@
-- 3.times do
+- for app in @apps
   .content-box
     .content-header
     .content-layout
       .content-boddy
         .content-boddy-box
           .icon
-            =image_tag("sample_icon.png")
+            =image_tag(app.icon_url)
           .desc
             .app-title
               .right
                 Lifestyle
-              Talking Ladybug #{link_to nbsp(4), "#", :title => "go youtube", :class => "youtube"}
+              =link_to truncate(app.title, :length => 24, :separator => "..."), app
+              =link_to nbsp(4), app.youtube_url, :title => "go youtube", :class => "youtube", :target => "_blank" if app.has_youtube?
             .app-desc
-              It's a app desc, #{"words "*40}.
+              =simple_format(app.desc)
           .clearfix
       .content-footer
         =image_tag("free_app_btn.png")

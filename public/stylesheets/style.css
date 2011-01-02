@@ -83,9 +83,7 @@ ul.nav {
   display: block; }
   ul.nav li {
     list-style: none outside none;
-    float: left;
-    /*    a.iphone:hover {background-position: left bottom;}*/
-    /*    a.ipad:hover {background-position: right top;}*/ }
+    float: left; }
     ul.nav li a {
       display: block;
       width: 119px;
@@ -124,8 +122,7 @@ ul.nav {
     background: url("/images/main_bg.png") no-repeat right top;
     height: 60px; }
   .main .main-boddy {
-    background: url("/images/main_bg_repeat.png") repeat-y;
-    /*    height: 1000px;*/ }
+    background: url("/images/main_bg_repeat.png") repeat-y; }
   .main .main-footer {
     background: url("/images/main_bg.png") no-repeat center bottom;
     height: 80px; }
@@ -150,7 +147,6 @@ ul.nav {
   .content-box .content-layout {
     background: url("/images/content_bg.png") no-repeat left bottom; }
   .content-box .content-boddy {
-    /*    height: 400px;*/
     background: url("/images/content_bg_repeat.png") repeat-y left center; }
     .content-box .content-boddy .content-boddy-box {
       width: 597px;
@@ -172,6 +168,10 @@ ul.nav {
         .content-box .content-boddy .desc .app-title .right {
           color: #358f1b;
           font-style: italic; }
+        .content-box .content-boddy .desc .app-title a {
+          color: #2a2a2a; }
+        .content-box .content-boddy .desc .app-title a:hover {
+          text-decoration: underline; }
       .content-box .content-boddy .desc .app-desc {
         width: 330px;
         margin-top: 10px; }
@@ -266,4 +266,5 @@ ul.nav {
 a.youtube {
   width: 26px;
   height: 24px;
-  background: url("/images/youtube.png") no-repeat 0 0; }
+  background: url("/images/youtube.png") no-repeat 0 0;
+  text-decoration: none !important; }
