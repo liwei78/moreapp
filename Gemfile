@@ -34,7 +34,6 @@ gem "haml"
 # gem 'jquery-rails'
 # gem 'ckeditor', '3.4.2.pre'
 # gem 'paperclip'
-gem 'faker'
 
 group :development do
   gem 'rspec-rails'
