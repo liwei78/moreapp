@@ -1,11 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
+  title: App title 1
   desc: MyText
-  icon: MyString
+  app_type: iphone
+  icon_url: youtube.com
+  youtube_url: baidu.com/logo.jpg
 
 two:
-  title: MyString
+  title: App title 2
   desc: MyText
-  icon: MyString
+  app_type: ipad
+  icon_url: tudou.com
+  youtube_url: baidu.com/logo.jpg

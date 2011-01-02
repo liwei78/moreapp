@@ -1,7 +1,8 @@
 Moreappweb::Application.routes.draw do
   resources :apps do
     collection do
-      get 'ipad', 'more'
+      get 'ipad'
+      post 'more'
     end
   end
   

@@ -24,7 +24,7 @@
       .main-footer
         - if ["index", "ipad"].include?(action_name)
           .more-app-btn
-            =link_to nbsp, more_apps_path
+            =link_to nbsp, more_apps_path, :remote => true, :method => :post
       .icons-div
         .icons
           =image_tag("icon_youtube.png")
