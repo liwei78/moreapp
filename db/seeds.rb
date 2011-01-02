@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-if Rails.env == "development"
+if true or Rails.env == "development"
   55.times do
     App.create(
       :title    => Faker::Lorem.sentences(1).to_s,
