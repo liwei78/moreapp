@@ -21,10 +21,11 @@
       .main-header
       .main-boddy
         = yield
+        #more-apps-div
       .main-footer
         - if ["index", "ipad"].include?(action_name)
           .more-app-btn
-            =link_to nbsp, more_apps_path, :remote => true, :method => :post
+            = link_to nbsp, more_apps_path(:app_type => @app_type, :offset => SITE_SETTINGS["each_show"]), :remote => true, :method => :post, :id => "more_app_btn"
       .icons-div
         .icons
           =image_tag("icon_youtube.png")
@@ -37,11 +38,14 @@
         .subscribe-form
           .text
             Subscribe to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!
-          .input
-            =text_field_tag :subscribe_mail, "enter your email address", :class => "input-field"
-            =image_submit_tag("subscribe_btn.png", :class => "submit-btn")
-          .notice.error
+          - form_tag subscribe_apps_path, :remote => true do
+            .input
+              =text_field_tag :subscribe_mail, "enter your email address", :id => "email_input", :class => "input-field", :onblur=>"addText(this);", :onfocus=>"clearText(this);"
+              =image_submit_tag("subscribe_btn.png", :class => "submit-btn")
+          .notice.error.hide#subscribe_error
             please enter a valid email address
+          .notice.success.hide#subscribe_success
+            thanks, your address has been added
 
     .footer
       .copyright

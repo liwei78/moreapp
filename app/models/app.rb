@@ -1,5 +1,9 @@
 class App < ActiveRecord::Base
-  @@per_page = 10
+  
+  validates :title,
+    :presence => true
+  validates :desc,
+    :presence => true
   
   def has_youtube?
     !self.youtube_url.blank?

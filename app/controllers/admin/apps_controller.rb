@@ -5,7 +5,11 @@ class Admin::AppsController < ApplicationController
   layout "admin"
 
   def index
-    @apps = App.paginate(:conditions => ["app_type = ?", (params[:app_type].nil? ? "iphone" : params[:app_type])], :page => params[:page], :per_page => 20, :order => "id desc")
+    @apps = App.paginate(
+      :conditions => ["app_type = ?", (params[:app_type].nil? ? "iphone" : params[:app_type])], 
+      :page => params[:page], 
+      :per_page => 20, 
+      :order => "position desc, id desc")
     respond_to do |format|
       format.html
     end
@@ -31,7 +35,8 @@ class Admin::AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to(admin_app_path(@app), :notice => 'App was successfully created.') }
+        flash[:success] = 'App was successfully created.'
+        format.html { redirect_to(admin_app_path(@app)) }
       else
         format.html { render :action => "new" }
       end
@@ -43,7 +48,8 @@ class Admin::AppsController < ApplicationController
 
     respond_to do |format|
       if @app.update_attributes(params[:app])
-        format.html { redirect_to(admin_app_path(@app), :notice => 'App was successfully updated.') }
+        flash[:success] = 'App was successfully updated.'
+        format.html { redirect_to(admin_app_path(@app)) }
       else
         format.html { render :action => "edit" }
       end
@@ -53,17 +59,19 @@ class Admin::AppsController < ApplicationController
   def destroy
     @app = App.find(params[:id])
     @app.destroy
-
     respond_to do |format|
-      format.html { redirect_to(admin_apps_path, :notice => 'A App was deleted.') }
+      flash[:success] = 'A App was deleted.'
+      format.html { redirect_to(admin_apps_path) }
     end
   end
   
   private
   
   def need_login
+    puts params[:controller]
+    puts params[:action]
     unless session[:admin_login] == SITE_SETTINGS["admin_key"]
-      flash[:error] = "Login first!"
+      flash[:error] = "Login First !"
       redirect_to login_path 
     end
   end

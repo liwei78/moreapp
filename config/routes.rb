@@ -2,12 +2,13 @@ Moreappweb::Application.routes.draw do
   resources :apps do
     collection do
       get 'ipad'
-      post 'more'
+      post 'more', 'subscribe'
     end
   end
   
   namespace :admin do
     resources :apps
+    resources :emails
   end
 
   match 'admin/login' => 'Admin::Main#login', :as => :login

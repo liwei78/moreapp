@@ -1,6 +1,8 @@
 - if @app.errors.any?
-  .notification.attention.png_bg
+  .notification.error.png_bg
     = link_to image_tag("/images/admin/icons/cross_grey_small.png"), "#", :class => "close"
+    %div
+      = @app.errors.full_messages.join(', ')
 - form_for(@app, :url => (@app.new_record? ? admin_apps_path : admin_app_path(@app))) do |f|
   %p
     %label App Title
@@ -14,6 +16,15 @@
   %p
     %label App Type
     = f.select :app_type, ["iphone", "ipad"]
+  %p
+    %label Category
+    = f.select :category, SITE_SETTINGS["categories"]
+  %p
+    %label Position
+    = f.text_field :position
+    %br
+    %small
+      Descending sequence by position number。
   %p
     = submit_tag("Submit", :class => "button")
     

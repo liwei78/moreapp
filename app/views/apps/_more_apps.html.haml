@@ -1,0 +1,21 @@
+%div{:id => "div_#{@div_id}", :style => "display: none;"}
+  - for app in apps
+    .content-box
+      .content-header
+      .content-layout
+        .content-boddy
+          .content-boddy-box
+            .icon
+              = image_tag(app.icon_url||SITE_SETTINGS["default_icon_path"])
+            .desc
+              .app-title
+                .right
+                  = app.category
+                = link_to truncate(app.title, :length => 24, :separator => "..."), app
+                = link_to nbsp(4), app.youtube_url, :title => "go youtube", :class => "youtube", :target => "_blank" if app.has_youtube?
+              .app-desc
+                = simple_format(app.desc)
+            .clearfix
+        .content-footer
+          = image_tag("free_app_btn.png")
+    .content-line

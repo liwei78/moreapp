@@ -3,7 +3,7 @@
   What would you like to do?
 %ul.shortcut-buttons-set
   %li
-    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Create new app</span>"), new_admin_app_path, :class => "shortcut-button"
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Create app</span>"), new_admin_app_path, :class => "shortcut-button"
 .clear
 .content-box
   .content-box-header
@@ -19,9 +19,10 @@
       %table
         %thead
           %tr
+            %th Pos
             %th App Title
             %th Type
-            %th Catelog
+            %th Category
             %th Manage
         %tfoot
           %tr
@@ -32,11 +33,13 @@
           - for app in @apps
             %tr
               %td
-                = app.title
+                = app.position
+              %td
+                = link_to app.title, admin_app_path(app)
               %td
                 = app.app_type
               %td
-                Lifestyle
+                = app.category
               %td
                 = link_to image_tag("/images/admin/icons/pencil.png"), edit_admin_app_path(app), :title => "Edit"
                 = nbsp(2)

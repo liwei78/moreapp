@@ -17,9 +17,9 @@
         %label Password
         = password_field_tag(:password, "", :class => "text-input")
       .clear
-      %p{:id => "remember-password"}
-        = check_box_tag(:remember_me)
-        Remember me 
+      / %p{:id => "remember-password"}
+      /   = check_box_tag(:remember_me)
+      /   Remember me 
       .clear
       %p
         =submit_tag("Login", :class => "button")

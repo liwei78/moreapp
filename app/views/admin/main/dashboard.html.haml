@@ -1,1 +1,9 @@
-It's Dashboard
+%h2 Welcome
+%p#page-intro
+  What would you like to do?
+%ul.shortcut-buttons-set
+  %li
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Create app</span>"), new_admin_app_path, :class => "shortcut-button"
+  %li
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Add email</span>"), new_admin_email_path, :class => "shortcut-button"
+.clear

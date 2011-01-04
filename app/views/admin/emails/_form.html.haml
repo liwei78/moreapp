@@ -1,0 +1,12 @@
+- if @email.errors.any?
+  .notification.error.png_bg
+    = link_to image_tag("/images/admin/icons/cross_grey_small.png"), "#", :class => "close"
+    %div
+      = @email.errors.full_messages.join(', ')
+- form_for(@email, :url => (@email.new_record? ? admin_emails_path : admin_email_path(@email))) do |f|
+  %p
+    %label Email Address
+    = f.text_field :address, :class => "text-input medium-input"
+  %p
+    = submit_tag("Submit", :class => "button")
+    

@@ -57,6 +57,7 @@ h1,h2,h3 {
 .clearfix     {clear: both;}
 .small        {font-size: 10px;}
 .normal-font  {font-weight: normal;}
+.hide         {display: none;}
 
 /*page template*/
 .header {
@@ -267,7 +268,7 @@ ul.nav {
     }
     .success {
       background: url("/images/success.png") no-repeat left 3px;
-      color: #c34445;
+      color: #8eb92a;
     }
     .error {
       background: url("/images/error.png") no-repeat left 3px;

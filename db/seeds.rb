@@ -8,21 +8,23 @@
 
 if true or Rails.env == "development"
   i = 0
-  55.times do
+  20.times do
     App.create(
       :title    => "(#{i.to_s})" + Faker::Lorem.sentences(1).to_s,
-      :desc     => Faker::Lorem.paragraphs(2).join("<br />"),
+      :desc     => Faker::Lorem.paragraphs(1).join("<br />"),
       :app_type => "iphone",
+      :category => "Lifestyle",
       :icon_url => "/images/sample_icon.png",
       :youtube_url => ( (rand(9) % 2 == 0) ? "" : "http://www.youtube.com/" )
     )
     i += 1
   end
-  75.times do
+  30.times do
     App.create(
       :title    => "(#{i.to_s})" + Faker::Lorem.sentences(1).to_s,
-      :desc     => Faker::Lorem.paragraphs(2).join("<br />"),
+      :desc     => Faker::Lorem.paragraphs(1).join("<br />"),
       :app_type => "ipad",
+      :category => "Movie",
       :icon_url => "/images/sample_icon.png",
       :youtube_url => ( (rand(9) % 2 == 0) ? "" : "http://www.youtube.com/" )
     )

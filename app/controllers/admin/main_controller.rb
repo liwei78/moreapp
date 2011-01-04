@@ -27,8 +27,7 @@ class Admin::MainController < ApplicationController
     redirect_to root_path
   end
   
-  def index
-
+  def dashboard
   end
   
 end

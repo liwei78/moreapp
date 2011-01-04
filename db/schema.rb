@@ -10,14 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101229070801) do
+ActiveRecord::Schema.define(:version => 20110104093702) do
 
   create_table "apps", :force => true do |t|
     t.string   "title"
     t.text     "desc"
     t.string   "app_type"
+    t.string   "category"
     t.string   "icon_url"
     t.string   "youtube_url"
+    t.integer  "position",    :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "emails", :force => true do |t|
+    t.string   "address"
+    t.datetime "last_send"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,34 +9,41 @@
     = csrf_meta_tag
     = yield :header
   - if action_name == "login"
-    %body{:id => "login"}
+    %body#login
       = yield
   - else
     %body
       #body-wrapper
         #sidebar
           #sidebar-wrapper
-            %h1{:id => "sidebar-title"}
-              = link_to "Admin Panel", "#"
-            = link_to image_tag("/images/admin/logo.png", :id => "logo"), root_path
+            %h1#sidebar-title
+              = link_to "Admin Panel", dashboard_path
+            = link_to image_tag("/images/admin/logo.png", :id => "logo"), dashboard_path
             #profile-links
               Hello
               / = link_to "open messages box", "#message", :rel => "modal", :title => "Messages Box"
               %br
               %br
-              = link_to "view site", root_path, :target =>"_blank"
+              = link_to "View Site", root_path, :target =>"_blank"
               |
               = link_to "Sing Out", logout_path
-            %ul{:id => "main-nav"}
+            %ul#main-nav
               %li
-                = link_to "Dashboard", dashboard_path, :class => "nav-top-item no-submenu"
+                = link_to "Dashboard", dashboard_path, :class => "nav-top-item no-submenu #{'current' if params[:controller] == "Admin::Main" and params[:action] == "dashboard"}"
               %li
-                = link_to "Apps", "#", :class => "nav-top-item current"
+                = link_to "Apps", admin_apps_path, :class => "nav-top-item #{'current' if params[:controller] == "admin/apps"}"
                 %ul
                   %li
-                    =link_to "All Apps", admin_apps_path, :class => ("current" if action_name == "index")
+                    =link_to "All Apps", admin_apps_path, :class => "#{'current' if params[:controller] == "admin/apps" and params[:action] == "index"}"
                   %li
-                    =link_to "Create new App", new_admin_app_path, :class => ("current" if action_name == "new")
+                    =link_to "Create new App", new_admin_app_path, :class => "#{'current' if params[:controller] == "admin/apps" and params[:action] == "new"}"
+              %li
+                = link_to "Emails", admin_emails_path, :class => "nav-top-item #{'current' if params[:controller] == "admin/emails"}"
+                %ul
+                  %li
+                    =link_to "All Subscribe Emails", admin_emails_path, :class => "#{'current' if params[:controller] == "admin/emails" and params[:action] == "index"}"
+                  %li
+                    =link_to "Add subscribe email", new_admin_email_path, :class => "#{'current' if params[:controller] == "admin/emails" and params[:action] == "new"}"
                 
             #messages.hide
               %h3
@@ -53,10 +60,11 @@
             = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
             %div
               it's a information
-          .notification.success.png_bg.hide
-            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
-            %div
-              it's a success
+          - unless flash[:success].nil?
+            .notification.success.png_bg
+              = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+              %div
+                = flash[:success]
           .notification.error.png_bg.hide
             = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
             %div

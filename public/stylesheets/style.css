@@ -68,6 +68,9 @@ h1, h2, h3 {
 .normal-font {
   font-weight: normal; }
 
+.hide {
+  display: none; }
+
 /*page template*/
 .header {
   width: 777px;
@@ -242,7 +245,7 @@ ul.nav {
       margin-top: 10px; }
     .subscribe-div .subscribe-form .success {
       background: url("/images/success.png") no-repeat left 3px;
-      color: #c34445; }
+      color: #8eb92a; }
     .subscribe-div .subscribe-form .error {
       background: url("/images/error.png") no-repeat left 3px;
       color: #c34445; }

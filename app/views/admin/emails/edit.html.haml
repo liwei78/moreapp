@@ -1,0 +1,19 @@
+%h2 Welcome
+%p#page-intro
+  What would you like to do?
+%ul.shortcut-buttons-set
+  %li
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Add email</span>"), new_admin_email_path, :class => "shortcut-button"
+.clear
+.content-box
+  .content-box-header
+    %h3 Edit Email
+    %ul.content-box-tabs
+      %li
+        = link_to "All", admin_emails_path
+      %li
+        = link_to "Edit", edit_admin_email_path(@email), :class => "default-tab"
+    .clear
+  .content-box-content
+    .tab-content.default-tab
+      = render :partial => "form", :locals => {:email => @email}

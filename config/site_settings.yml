@@ -6,7 +6,9 @@ common: &common
   admin_key: iamhere
   admin_account: liwei
   admin_password: liwei
-  
+  default_icon_path: /images/sample_icon.png
+  categories: ["Lifestyle", "Movie", "Book", "Other"]
+  each_show: 6
 development:
   <<: *common
 

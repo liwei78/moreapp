@@ -4,8 +4,10 @@ class CreateApps < ActiveRecord::Migration
       t.string :title
       t.text   :desc
       t.string :app_type
+      t.string :category
       t.string :icon_url
       t.string :youtube_url
+      t.integer :position, :default => 0
       t.timestamps
     end
   end
