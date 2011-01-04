@@ -3,6 +3,9 @@ common: &common
   description: "desc"
   author: "Rique Li, hi@liwei.me"
   site_title: "More App"
+  admin_key: iamhere
+  admin_account: liwei
+  admin_password: liwei
   
 development:
   <<: *common

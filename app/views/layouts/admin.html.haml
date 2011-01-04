@@ -1,0 +1,16 @@
+!!!
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
+  %head
+    %title= seo_title
+    %meta{'http-equiv' => "content-type", :content => "text/html; charset=UTF-8"}
+    %meta{'name' => "author", :content => "#{SITE_SETTINGS["author"]}"}
+    = stylesheet_link_tag "admin/reset", "admin/style", "admin/invalid"
+    = javascript_include_tag "jquery", "facebox", "jquery.wysiwyg", "rails", "admin"
+    = csrf_meta_tag
+    = yield :header
+  - if action_name == "login"
+    %body{:id => "login"}
+      = yield
+  - else
+    %body
+      = yield

@@ -1,0 +1,25 @@
+#login-wrapper.png_bg
+  #login-top
+    %h1
+      Admin Panel
+    =link_to image_tag("admin/logo.png"), root_path
+  #login-content
+    - form_tag(check_login_path) do
+      - unless flash[:error].nil?
+        .notification.information.png_bg
+          %div
+            = flash[:error]
+      %p
+        %label Account
+        = text_field_tag(:account, "", :class => "text-input")
+      .clear
+      %p
+        %label Password
+        = password_field_tag(:password, "", :class => "text-input")
+      .clear
+      %p{:id => "remember-password"}
+        = check_box_tag(:remember_me)
+        Remember me 
+      .clear
+      %p
+        =submit_tag("Login", :class => "button")

@@ -6,6 +6,13 @@ Moreappweb::Application.routes.draw do
     end
   end
   
+  namespace :admin do
+    resources :apps
+  end
+
+  match 'admin/main/login' => 'Admin::Main#login', :as => :login
+  match 'admin/main/check_login' => 'Admin::Main#check_login', :as => :check_login
+  
   root :to => "apps#index"
   
   # The priority is based upon order of creation:
