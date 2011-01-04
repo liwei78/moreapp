@@ -1,0 +1,42 @@
+%h2 Welcome
+%p#page-intro
+  What would you like to do?
+%ul.shortcut-buttons-set
+  %li
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Create new app</span>"), new_admin_app_path, :class => "shortcut-button"
+.clear
+.content-box
+  .content-box-header
+    %h3 Apps List
+    %ul.content-box-tabs
+      %li
+        = link_to "Iphone", admin_apps_path, :class => "#{'default-tab' if params[:app_type].nil?}"
+      %li
+        = link_to "Ipad", admin_apps_path(:app_type => "ipad"), :class => "#{'default-tab' if params[:app_type] == 'ipad'}"
+    .clear
+  .content-box-content
+    .tab-content.default-tab
+      %table
+        %thead
+          %tr
+            %th App Title
+            %th Type
+            %th Catelog
+            %th Manage
+        %tfoot
+          %tr
+            %td{:colspan => 6}
+              .pagination
+                = will_paginate @apps, :param_name => "page", :previous_label => "&lt;&lt;", :next_label => "&gt;&gt;"
+        %tbody
+          - for app in @apps
+            %tr
+              %td
+                = app.title
+              %td
+                = app.app_type
+              %td
+                Lifestyle
+              %td
+                = link_to image_tag("/images/admin/icons/pencil.png"), edit_admin_app_path(app), :title => "Edit"
+                = link_to image_tag("/images/admin/icons/cross.png"), admin_app_path(app), :title => "Delete", :method => "destroy", :remote => true

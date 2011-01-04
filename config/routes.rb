@@ -10,8 +10,10 @@ Moreappweb::Application.routes.draw do
     resources :apps
   end
 
-  match 'admin/main/login' => 'Admin::Main#login', :as => :login
-  match 'admin/main/check_login' => 'Admin::Main#check_login', :as => :check_login
+  match 'admin/login' => 'Admin::Main#login', :as => :login
+  match 'admin/check_login' => 'Admin::Main#check_login', :as => :check_login
+  match 'admin/logout' => 'Admin::Main#logout', :as => :logout
+  match 'admin/main/' => 'Admin::Main#index', :as => :dashboard
   
   root :to => "apps#index"
   

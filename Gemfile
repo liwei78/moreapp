@@ -30,7 +30,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem "haml"
-# gem "will_paginate"
+gem "will_paginate", '3.0.pre2'
 # gem 'jquery-rails'
 # gem 'ckeditor', '3.4.2.pre'
 # gem 'paperclip'

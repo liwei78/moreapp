@@ -13,4 +13,58 @@
       = yield
   - else
     %body
-      = yield
+      #body-wrapper
+        #sidebar
+          #sidebar-wrapper
+            %h1{:id => "sidebar-title"}
+              = link_to "Admin Panel", "#"
+            = link_to image_tag("/images/admin/logo.png", :id => "logo"), root_path
+            #profile-links
+              Hello
+              = link_to "open messages box", "#message", :rel => "modal", :title => "Messages Box"
+              %br
+              %br
+              = link_to "view site", root_path, :target =>"_blank"
+              |
+              = link_to "Sing Out", logout_path
+            %ul{:id => "main-nav"}
+              %li
+                = link_to "Dashboard", dashboard_path, :class => "nav-top-item no-submenu"
+              %li
+                = link_to "Apps", "#", :class => "nav-top-item current"
+                %ul
+                  %li
+                    =link_to "All Apps", admin_apps_path, :class => "current"
+                  %li
+                    =link_to "Add a new App", new_admin_app_path
+                  %li
+                    =link_to "Sort Apps", admin_apps_path
+                
+            #messages.hide
+              %h3
+                Messages Box
+              %p
+                it's only for test
+        #main-content
+          = yield
+          .clear
+          .notification.attention.png_bg.hide
+            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+            %div
+              it's a attention
+          .notification.information.png_bg.hide
+            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+            %div
+              it's a information
+          .notification.success.png_bg.hide
+            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+            %div
+              it's a success
+          .notification.error.png_bg.hide
+            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+            %div
+              it's a error
+          #footer
+            %small
+              &copy 2011
+              = link_to "Top", "#"

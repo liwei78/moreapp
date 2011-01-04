@@ -5,6 +5,7 @@ class Admin::AppsController < ApplicationController
   layout "admin"
 
   def index
+    @apps = App.paginate(:conditions => ["app_type = ?", (params[:app_type].nil? ? "iphone" : params[:app_type])], :page => params[:page], :per_page => 20, :order => "id desc")
     respond_to do |format|
       format.html
     end
