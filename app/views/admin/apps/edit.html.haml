@@ -10,8 +10,10 @@
     %h3 Edit App
     %ul.content-box-tabs
       %li
-        = link_to "Edit", "#", :class => "default-tab"
+        = link_to "View", admin_app_path(@app)
+      %li
+        = link_to "Edit", edit_admin_app_path(@app), :class => "default-tab"
     .clear
   .content-box-content
     .tab-content.default-tab
-      
+      = render :partial => "form", :locals => {:app => @app}

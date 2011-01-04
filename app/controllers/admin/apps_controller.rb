@@ -10,6 +10,10 @@ class Admin::AppsController < ApplicationController
       format.html
     end
   end
+  
+  def show
+    @app = App.find(params[:id])
+  end
 
   def new
     @app = App.new
@@ -27,7 +31,7 @@ class Admin::AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to(@app, :notice => 'App was successfully created.') }
+        format.html { redirect_to(admin_app_path(@app), :notice => 'App was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -39,7 +43,7 @@ class Admin::AppsController < ApplicationController
 
     respond_to do |format|
       if @app.update_attributes(params[:app])
-        format.html { redirect_to(@app, :notice => 'App was successfully updated.') }
+        format.html { redirect_to(admin_app_path(@app), :notice => 'App was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
@@ -51,7 +55,7 @@ class Admin::AppsController < ApplicationController
     @app.destroy
 
     respond_to do |format|
-      format.html { redirect_to(apps_url) }
+      format.html { redirect_to(admin_apps_path, :notice => 'A App was deleted.') }
     end
   end
   

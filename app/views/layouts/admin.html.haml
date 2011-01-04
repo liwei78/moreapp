@@ -21,7 +21,7 @@
             = link_to image_tag("/images/admin/logo.png", :id => "logo"), root_path
             #profile-links
               Hello
-              = link_to "open messages box", "#message", :rel => "modal", :title => "Messages Box"
+              / = link_to "open messages box", "#message", :rel => "modal", :title => "Messages Box"
               %br
               %br
               = link_to "view site", root_path, :target =>"_blank"
@@ -34,11 +34,9 @@
                 = link_to "Apps", "#", :class => "nav-top-item current"
                 %ul
                   %li
-                    =link_to "All Apps", admin_apps_path, :class => "current"
+                    =link_to "All Apps", admin_apps_path, :class => ("current" if action_name == "index")
                   %li
-                    =link_to "Add a new App", new_admin_app_path
-                  %li
-                    =link_to "Sort Apps", admin_apps_path
+                    =link_to "Create new App", new_admin_app_path, :class => ("current" if action_name == "new")
                 
             #messages.hide
               %h3
@@ -46,12 +44,11 @@
               %p
                 it's only for test
         #main-content
-          = yield
-          .clear
-          .notification.attention.png_bg.hide
-            = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
-            %div
-              it's a attention
+          - unless flash[:notice].nil?
+            .notification.attention.png_bg
+              = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+              %div
+                = flash[:notice]
           .notification.information.png_bg.hide
             = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
             %div
@@ -64,6 +61,8 @@
             = link_to image_tag("/images/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
             %div
               it's a error
+          = yield
+          .clear
           #footer
             %small
               &copy 2011

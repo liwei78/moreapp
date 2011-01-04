@@ -28,7 +28,7 @@ class Admin::MainController < ApplicationController
   end
   
   def index
-    
+
   end
   
 end

@@ -1,0 +1,31 @@
+%h2 Welcome
+%p#page-intro
+  What would you like to do?
+%ul.shortcut-buttons-set
+  %li
+    = link_to raw("<span>#{image_tag("/images/admin/icons/paper_content_pencil_48.png")}<br>Create new app</span>"), new_admin_app_path, :class => "shortcut-button"
+.clear
+.content-box
+  .content-box-header
+    %h3 Edit App
+    %ul.content-box-tabs
+      %li
+        = link_to "View", admin_app_path(@app), :class => "default-tab"
+      %li
+        = link_to "Edit", edit_admin_app_path(@app)
+    .clear
+  .content-box-content
+    .tab-content.default-tab
+      %h4
+        App Title
+      %p= @app.title
+      %h4
+        App Description
+      %p= simple_format(@app.desc)
+      - if @app.has_youtube?
+        %h4
+          Youtube Url:
+        %p= link_to @app.youtube_url, @app.youtube_url, :target => "_blank"
+      %h4
+        App Type
+      %p= @app.app_type
